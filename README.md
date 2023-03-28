@@ -250,7 +250,7 @@ sudo chmod +x backupsql.sh
 ```
 #!/bin/bash
 docker exec -it mariadb bash -c "mysqldump -uroot -ppassword flarum > /root/backupflarumsql.txt"
-docker cp mariadb:/root/backupflarum.txt ~/flarum/backupflarumsql_$(date +%Y-%m-%d).txt
+docker cp mariadb:/root/backupflarumsql.txt ~/flarum/backupflarumsql_$(date +%Y-%m-%d).txt
 ```
 ## License
 
