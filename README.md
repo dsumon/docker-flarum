@@ -152,7 +152,7 @@ version: "3"
 
 services:
   flarum:
-    image: mondedie/flarum:stable
+    image: dsumon/flarum:latest
     container_name: flarum
     environment:
       - PHP_EXTENSIONS=gmp session brotli
