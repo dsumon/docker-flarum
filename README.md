@@ -10,8 +10,6 @@
 
  - **latest** [(Dockerfile)](https://github.com/mondediefr/docker-flarum/blob/master/Dockerfile)
  - **stable** [(Dockerfile)](https://github.com/mondediefr/docker-flarum/blob/master/Dockerfile)
- - **1.0.2** [(Dockerfile)](https://github.com/mondediefr/docker-flarum/blob/1.0.2/Dockerfile)
- - **1.2.0** [(Dockerfile)](https://github.com/mondediefr/docker-flarum/blob/1.2.0/Dockerfile)
 
 ### Features
 
@@ -19,7 +17,7 @@
 - Lightweight & secure image
 - Based on Alpine Linux 3.16
 - **nginx** and **PHP 8.0**
-- Latest [Flarum Framework](https://github.com/flarum/framework) (v1.3.0)
+- Latest [Flarum Framework](https://github.com/flarum/framework) (v1.7.0)
 - MySQL/Mariadb driver
 - OPCache extension configured
 
@@ -74,11 +72,8 @@
 #### 1 - Pull flarum image
 
 ```bash
-# Pull from hub.docker.com :
-docker pull mondedie/flarum:latest
-
-# or build it manually :
-docker build -t mondedie/flarum:latest https://github.com/mondediefr/docker-flarum.git
+# build it manually :
+docker build -t mondedie/flarum:latest https://github.com/dsumon/docker-flarum.git
 ```
 
 #### 2 - Docker-compose.yml
@@ -91,12 +86,12 @@ services:
     image: mondedie/flarum:stable
     container_name: flarum
     env_file:
-      - /mnt/docker/flarum/flarum.env
+      - ./flarum/flarum.env
     volumes:
-      - /mnt/docker/flarum/assets:/flarum/app/public/assets
-      - /mnt/docker/flarum/extensions:/flarum/app/extensions
-      - /mnt/docker/flarum/storage/logs:/flarum/app/storage/logs
-      - /mnt/docker/flarum/nginx:/etc/nginx/flarum
+      - ./flarum/assets:/flarum/app/public/assets
+      - ./flarum/extensions:/flarum/app/extensions
+      - ./flarum/storage/logs:/flarum/app/storage/logs
+      - ./flarum/nginx:/etc/nginx/flarum
     ports:
       - 80:8888
     depends_on:
@@ -111,7 +106,7 @@ services:
       - MYSQL_USER=flarum
       - MYSQL_PASSWORD=xxxxxxxxxx
     volumes:
-      - /mnt/docker/mysql/db:/var/lib/mysql
+      - ./flarum/db:/var/lib/mysql
 ```
 
 #### 3 - Run it
@@ -167,10 +162,10 @@ services:
     environment:
       - PHP_EXTENSIONS=gmp session brotli
     volumes:
-      - /mnt/docker/flarum/assets:/flarum/app/public/assets
-      - /mnt/docker/flarum/extensions:/flarum/app/extensions
-      - /mnt/docker/flarum/storage/logs:/flarum/app/storage/logs
-      - /mnt/docker/flarum/nginx:/etc/nginx/flarum
+      - ./flarum/assets:/flarum/app/public/assets
+      - ./flarum/extensions:/flarum/app/extensions
+      - ./flarum/storage/logs:/flarum/app/storage/logs
+      - ./flarum/nginx:/etc/nginx/flarum
 ```
 
 This example install php8-gmp php8-session and php8-brotli with apk  
@@ -224,7 +219,7 @@ my_public_repo|{"type":"vcs","url":"https://github.com/my/repo"}
 
 Example for a private repository in github
 
-Add this in `/mnt/docker/flarum/extensions/composer.repositories.txt`
+Add this in `./flarum/extensions/composer.repositories.txt`
 ```
 username|{"type":"vcs","url":"https://github.com/username/my-private-repo"}
 ```
