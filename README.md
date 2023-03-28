@@ -247,6 +247,7 @@ See the instructions [here](https://github.com/dsumon/docker-flarum/blob/master/
 Use the script 'backupsql.sh', here the detail :
 ```
 cd flarum
+sudo chmod +x backupsql.sh
 ./backupsql.sh
 ```
 
