@@ -73,7 +73,7 @@
 
 ```bash
 # build it manually :
-docker build -t mondedie/flarum:latest https://github.com/dsumon/docker-flarum.git
+docker build -t dsumon/flarum:latest https://github.com/dsumon/docker-flarum.git
 ```
 
 #### 2 - Docker-compose.yml
