@@ -2,10 +2,6 @@
 
 ![logo](https://i.imgur.com/Bjrtbsc.png)
 
-[![](https://github.com/dsumon/docker-flarum/workflows/build/badge.svg)](https://github.com/dsumon/docker-flarum/actions)
-[![](https://img.shields.io/docker/pulls/mondedie/flarum)](https://hub.docker.com/r/mondedie/flarum)
-[![](https://img.shields.io/docker/stars/mondedie/flarum)](https://hub.docker.com/r/mondedie/flarum)
-
 ### Tag available
 
  - **latest** [(Dockerfile)](https://github.com/dsumon/docker-flarum/blob/master/Dockerfile)
