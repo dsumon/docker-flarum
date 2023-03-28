@@ -9,7 +9,6 @@
 ### Tag available
 
  - **latest** [(Dockerfile)](https://github.com/dsumon/docker-flarum/blob/master/Dockerfile)
- - **stable** [(Dockerfile)](https://github.com/dsumon/docker-flarum/blob/master/Dockerfile)
 
 ### Features
 
