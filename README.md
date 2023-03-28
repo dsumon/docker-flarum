@@ -1,15 +1,15 @@
-# mondedie/flarum
+# dsumon/flarum fork from mondedie
 
 ![logo](https://i.imgur.com/Bjrtbsc.png)
 
-[![](https://github.com/mondediefr/docker-flarum/workflows/build/badge.svg)](https://github.com/mondediefr/docker-flarum/actions)
+[![](https://github.com/dsumon/docker-flarum/workflows/build/badge.svg)](https://github.com/dsumon/docker-flarum/actions)
 [![](https://img.shields.io/docker/pulls/mondedie/flarum)](https://hub.docker.com/r/mondedie/flarum)
 [![](https://img.shields.io/docker/stars/mondedie/flarum)](https://hub.docker.com/r/mondedie/flarum)
 
 ### Tag available
 
- - **latest** [(Dockerfile)](https://github.com/mondediefr/docker-flarum/blob/master/Dockerfile)
- - **stable** [(Dockerfile)](https://github.com/mondediefr/docker-flarum/blob/master/Dockerfile)
+ - **latest** [(Dockerfile)](https://github.com/dsumon/docker-flarum/blob/master/Dockerfile)
+ - **stable** [(Dockerfile)](https://github.com/dsumon/docker-flarum/blob/master/Dockerfile)
 
 ### Features
 
@@ -113,10 +113,10 @@ services:
 
 You need a reverse proxy to access flarum, this is not described here. You can use the solution of your choice (Traefik, Nginx, Apache, Haproxy, Caddy, H2O...etc).
 
-Create a environment file (see docker-compose: /mnt/docker/flarum/flarum.env [here](https://github.com/mondediefr/docker-flarum/tree/master#2---docker-composeyml))
+Create a environment file (see docker-compose: ./flarum/flarum.env [here](https://github.com/dsumon/docker-flarum/tree/master#2---docker-composeyml))
 
 ```
-# vi /mnt/docker/flarum/flarum.env
+# vi ./flarum/flarum.env
 
 DEBUG=false
 FORUM_URL=http://domain.tld
@@ -197,7 +197,7 @@ docker exec -ti flarum extension list
 
 File to change the vhost flarum `/etc/nginx/flarum/custom-vhost-flarum.conf`  
 To use file custom-vhost-flarum.conf add volume `/etc/nginx/flarum`
-Create file in `/mnt/docker/flarum/nginx/custom-vhost-flarum.conf`
+Create file in `./flarum/nginx/custom-vhost-flarum.conf`
 
 ```nginx
 # Example of custom vhost flarum for nginx
@@ -210,7 +210,7 @@ location = /sitemap.xml {
 
 ### Custom composer repositories
 
-To use the composer repository system, add your repo name and json representation in `/mnt/docker/flarum/extensions/composer.repositories.txt`:
+To use the composer repository system, add your repo name and json representation in `./flarum/extensions/composer.repositories.txt`:
 
 ```
 my_private_repo|{"type":"path","url":"extensions/*/"}
@@ -232,7 +232,7 @@ Add your github token in var environment
 GITHUB_TOKEN_AUTH=XXXXXXXXXXXXXXX
 ```
 
-Add your repo in the list file `/mnt/docker/flarum/extensions/list`
+Add your repo in the list file `./flarum/extensions/list`
 ```
 username/my-private-repo:0.1.0
 ```
@@ -241,8 +241,8 @@ https://getcomposer.org/doc/03-cli.md#modifying-repositories
 
 ### Guide for upgrade your flarum container
 
-See the instructions [here](https://github.com/mondediefr/docker-flarum/blob/master/UPGRADE.md)
+See the instructions [here](https://github.com/dsumon/docker-flarum/blob/master/UPGRADE.md)
 
 ## License
 
-Docker image [mondedie/flarum](https://hub.docker.com/r/mondedie/flarum) is released under [MIT License](https://github.com/mondediefr/docker-flarum/blob/master/LICENSE).
+Docker image [mondedie/flarum](https://hub.docker.com/r/mondedie/flarum) is released under [MIT License](https://github.com/dsumon/docker-flarum/blob/master/LICENSE).
