@@ -243,6 +243,19 @@ https://getcomposer.org/doc/03-cli.md#modifying-repositories
 
 See the instructions [here](https://github.com/dsumon/docker-flarum/blob/master/UPGRADE.md)
 
+### Backup Flarum Database
+
+Use the script 'backupsql.sh', here the detail :
+```
+cd flarum
+./backupsql.sh
+```
+
+```
+#!/bin/bash
+docker exec -it mariadb bash -c "mysqldump -uroot -ppassword flarum > /root/backupflarumsql.txt"
+docker cp mariadb:/root/backupflarum.txt ~/flarum/backupflarumsql_$(date +%Y-%m-%d).txt
+```
 ## License
 
 Docker image [mondedie/flarum](https://hub.docker.com/r/mondedie/flarum) is released under [MIT License](https://github.com/dsumon/docker-flarum/blob/master/LICENSE).
